@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+
+<img src="{{ url_for('static', filename='/images/pokemon.jpg') }}" class="image"/>
+
+
+
+
+
+
+<div class="content">
+    <h1>Poke Stats</h1>
+   
+    <form action="/" method = "POST">
+       
+    </form>
+
+    {% if pokemon %}
+    <div>
+        <h2>{{ pokemon.name }}</h2>
+        <h3>{{ pokemon.ability }}</h3>
+        <h4>{{ pokemon.stats }}</h4>
+        <h5>{{ pokemon.stats2 }}</h5>
+        <h6>{{ pokemon.stats3 }}</h6>
+        <img src="{{ pokemon.sprite }}"/>
+        
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
