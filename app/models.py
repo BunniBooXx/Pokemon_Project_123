@@ -10,6 +10,8 @@ class Pokemon1(db.Model):
     id= db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     date_created=db.Column(db.DateTime, default=datetime.utcnow)
+
+
    
 class User(db.Model, UserMixin):
     id=db.Column(db.Integer,primary_key=True)
@@ -25,7 +27,7 @@ class User(db.Model, UserMixin):
     def __init__(self,username,email,password):
         self.username = username
         self.email = email
-        self.password = generate_password_hash(password)
+        self.password = password
 
 
 class Sign_Up(db.Model):
@@ -38,11 +40,11 @@ class Sign_Up(db.Model):
     
 class Login(db.Model):
     id=db.Column(db.Integer, primary_key=True)
-    first_name=db.Column(db.String(50), nullable=False)
-    last_name=db.Column(db.String(50), nullable=False)
-    email=db.Column(db.String(100), nullable=False)
+    username=db.Column(db.String(50),nullable=False)
     password=db.Column(db.String(100), nullable=False)
     date_created=db.Column(db.DateTime, default=datetime.utcnow)
+
+    
 
   
     

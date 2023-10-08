@@ -38,7 +38,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/login">Log In</a></li>
-                <li><a class="dropdown-item" href="/signup">Sign Up</a></li>
+                <li><a class="dropdown-item" href="/sign-up">Sign Up</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
@@ -46,12 +46,18 @@
           {% endif %}        
         </ul>
         <form class="d-flex" role="search">
+            <form class="header-form" method="POST" action="{{ url_for('social.index') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-inputs">
+                    {{ form.pokemon(class='form-input') }}
+                </div>
           <input
             class="form-control me-2"
             type="search"
             placeholder="Enter A Pokemon"
             aria-label="Search" />
           <button class="btn btn-outline-success" type="submit">Stats</button>
+          </form>
         </form>
       </div>
     </div>
